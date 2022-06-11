@@ -4,3 +4,8 @@ rollup.config.js
 tsconfig.json
 package-lock.json
 api-extractor.json
+.babelrc
+.eslintignore
+.gitignore
+.vscode
+.prettierrc

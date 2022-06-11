@@ -1,6 +1,6 @@
 import commonjs from '@rollup/plugin-commonjs' // commonjs模块转换插件
 import eslint from '@rollup/plugin-eslint' // eslint插件
-import { babel, getBabelOutputPlugin } from '@rollup/plugin-babel'
+import { babel } from '@rollup/plugin-babel'
 import ts from 'rollup-plugin-typescript2'
 import path from 'path'
 import fs from 'fs'
@@ -28,10 +28,34 @@ const commonConf = {
   input: getPath('./src/index.ts'),
   plugins: [
     nodeResolve(extensions),
-    babel({ exclude: 'node_modules/**' }),
     commonjs(),
     esPlugin,
     tsPlugin,
+    babel({
+      exclude: [/\/core-js\//],
+      extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.vue', '.ts'],
+      presets: [
+        ["@babel/env", {
+          modules: false,
+          useBuiltIns: 'usage',
+          corejs: 2,
+          forceAllTransforms: true
+        }],
+        // 添加
+        [
+          "@babel/preset-typescript",
+          {
+            extensions: [".ts", ".js"]
+          }
+        ]
+      ],
+      plugins: [
+        "babel-plugin-transform-object-assign",
+        "@babel/plugin-proposal-object-rest-spread"
+      ]
+    }),
+    
+    
     
   ],
 }
