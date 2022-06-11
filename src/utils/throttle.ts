@@ -1,5 +1,5 @@
 type throttleFn = (...args: unknown[]) => void
-export const throttle = (fn: throttleFn, delay = 500, context: any, ...args: any) => {
+const throttle = (fn: throttleFn, delay = 500, context: any, ...args: any) => {
   if (typeof fn !== 'function') {
     throw new Error('fn is not function')
   }

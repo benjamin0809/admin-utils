@@ -1,6 +1,6 @@
 import commonjs from '@rollup/plugin-commonjs' // commonjs模块转换插件
 import eslint from '@rollup/plugin-eslint' // eslint插件
-
+import { babel, getBabelOutputPlugin } from '@rollup/plugin-babel'
 import ts from 'rollup-plugin-typescript2'
 import path from 'path'
 import fs from 'fs'
@@ -26,7 +26,14 @@ const esPlugin = eslint({
 // 基础配置
 const commonConf = {
   input: getPath('./src/index.ts'),
-  plugins: [nodeResolve(extensions), commonjs(), esPlugin, tsPlugin],
+  plugins: [
+    nodeResolve(extensions),
+    babel({ exclude: 'node_modules/**' }),
+    commonjs(),
+    esPlugin,
+    tsPlugin,
+    
+  ],
 }
 // 需要导出的模块类型
 const outputMap = [
@@ -40,11 +47,19 @@ const outputMap = [
   },
 ]
 
-fs.readdirSync(path.resolve(__dirname, 'src', 'utils')).map((item) => {
-  const name = item.replace('.ts', '.js')
-  console.log(item)
-})
-
 const buildConf = (options) => Object.assign({}, commonConf, options)
+const output = outputMap.map((output) => buildConf({ output: { name: packageJSON.name, ...output } }))
 
-export default outputMap.map((output) => buildConf({ output: { name: packageJSON.name, ...output } }))
+// es module 
+const esOutputMap = fs.readdirSync(path.resolve(__dirname, 'src', 'utils')).map((item) => {
+  const name = item.replace('.ts', '.js')
+  return {
+    name,
+    format: 'es',
+    file: 'es/' + name,
+    input: getPath('./src/utils/' + item)
+  }
+})
+const esoutput = esOutputMap.map((output) => buildConf({ output: { ...output }, input: output.input }))
+// console.log(process.env)
+export default output.concat(esoutput)
