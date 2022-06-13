@@ -9,3 +9,6 @@ api-extractor.json
 .gitignore
 .vscode
 .prettierrc
+coverage
+__tests__
+jest.config.ts
