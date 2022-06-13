@@ -6,6 +6,7 @@ import path from 'path'
 import fs from 'fs'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 const getPath = (_path) => path.resolve(__dirname, _path)
+import dts from 'rollup-plugin-dts'
 import packageJSON from './package.json'
 
 const extensions = ['.js', '.ts', '.tsx']
@@ -22,6 +23,7 @@ const esPlugin = eslint({
 const babelPlugin = babel({
   exclude: [/\/core-js\//],
   extensions: extensions,
+  babelHelpers: 'inline',
   presets: [
     [
       '@babel/env',
@@ -82,4 +84,13 @@ const esOutputMap = fs.readdirSync(path.resolve(__dirname, 'src', 'utils')).map(
 })
 const esoutput = esOutputMap.map((output) => buildConf({ output: { ...output }, input: output.input }))
 // console.log(process.env)
-export default output.concat(esoutput)
+
+const config = output.concat(esoutput).concat([
+  {
+    input: 'src/index.ts',
+    output: { file: 'types/index.d.ts', format: 'es' },
+    plugins: [dts()],
+  },
+])
+// console.log(config)
+export default config

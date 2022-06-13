@@ -1436,14 +1436,6 @@
     "estree-walker" "^2.0.1"
     "picomatch" "^2.2.2"
 
-"@rollup/pluginutils@^4.1.2":
-  "integrity" "sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ=="
-  "resolved" "https://registry.npmmirror.com/@rollup/pluginutils/-/pluginutils-4.2.1.tgz"
-  "version" "4.2.1"
-  dependencies:
-    "estree-walker" "^2.0.1"
-    "picomatch" "^2.2.2"
-
 "@rushstack/node-core-library@3.45.5":
   "integrity" "sha512-KbN7Hp9vH3bD3YJfv6RnVtzzTAwGYIBl7y2HQLY4WEQqRbvE3LgI78W9l9X+cTAXCX//p0EeoiUYNTFdqJrMZg=="
   "resolved" "https://registry.npmmirror.com/@rushstack/node-core-library/-/node-core-library-3.45.5.tgz"
@@ -3534,7 +3526,7 @@
 
 "estree-walker@^2.0.1":
   "integrity" "sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w=="
-  "resolved" "https://registry.npmmirror.com/estree-walker/-/estree-walker-2.0.2.tgz"
+  "resolved" "https://registry.npmjs.org/estree-walker/-/estree-walker-2.0.2.tgz"
   "version" "2.0.2"
 
 "esutils@^2.0.2":
@@ -3760,7 +3752,7 @@
   dependencies:
     "to-regex-range" "^5.0.1"
 
-"find-cache-dir@^3.3.1", "find-cache-dir@^3.3.2":
+"find-cache-dir@^3.3.1":
   "integrity" "sha512-wXZV5emFEjrridIgED11OoUKLxiYjAcqot/NJdAkOhlJ+vGzwhOAfcG5OX1jP+S0PcjEn8bdMJv+g2jwQ3Onig=="
   "resolved" "https://registry.npmmirror.com/find-cache-dir/-/find-cache-dir-3.3.2.tgz"
   "version" "3.3.2"
@@ -3867,15 +3859,6 @@
   "version" "0.2.1"
   dependencies:
     "map-cache" "^0.2.2"
-
-"fs-extra@^10.0.0":
-  "integrity" "sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ=="
-  "resolved" "https://registry.npmmirror.com/fs-extra/-/fs-extra-10.1.0.tgz"
-  "version" "10.1.0"
-  dependencies:
-    "graceful-fs" "^4.2.0"
-    "jsonfile" "^6.0.1"
-    "universalify" "^2.0.0"
 
 "fs-extra@~7.0.1":
   "integrity" "sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw=="
@@ -4129,7 +4112,7 @@
   dependencies:
     "sparkles" "^1.0.0"
 
-"graceful-fs@^4.0.0", "graceful-fs@^4.1.11", "graceful-fs@^4.1.2", "graceful-fs@^4.1.4", "graceful-fs@^4.1.6", "graceful-fs@^4.2.0", "graceful-fs@^4.2.2", "graceful-fs@^4.2.4", "graceful-fs@^4.2.9":
+"graceful-fs@^4.0.0", "graceful-fs@^4.1.11", "graceful-fs@^4.1.2", "graceful-fs@^4.1.4", "graceful-fs@^4.1.6", "graceful-fs@^4.2.2", "graceful-fs@^4.2.4", "graceful-fs@^4.2.9":
   "integrity" "sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA=="
   "resolved" "https://registry.npmmirror.com/graceful-fs/-/graceful-fs-4.2.10.tgz"
   "version" "4.2.10"
@@ -5312,15 +5295,6 @@
   optionalDependencies:
     "graceful-fs" "^4.1.6"
 
-"jsonfile@^6.0.1":
-  "integrity" "sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ=="
-  "resolved" "https://registry.npmmirror.com/jsonfile/-/jsonfile-6.1.0.tgz"
-  "version" "6.1.0"
-  dependencies:
-    "universalify" "^2.0.0"
-  optionalDependencies:
-    "graceful-fs" "^4.1.6"
-
 "just-debounce@^1.0.0":
   "integrity" "sha512-qpcRocdkUmf+UTNBYx5w6dexX5J31AKK1OmPwH630a83DdVVUIngk55RSAiIGpQyoH0dlr872VHfPjnQnK1qDQ=="
   "resolved" "https://registry.npmjs.org/just-debounce/-/just-debounce-1.1.0.tgz"
@@ -5528,6 +5502,13 @@
   "integrity" "sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ=="
   "resolved" "https://registry.npmmirror.com/magic-string/-/magic-string-0.25.9.tgz"
   "version" "0.25.9"
+  dependencies:
+    "sourcemap-codec" "^1.4.8"
+
+"magic-string@^0.26.1":
+  "integrity" "sha512-NzzlXpclt5zAbmo6h6jNc8zl2gNRGHvmsZW4IvZhTC4W7k4OlLP+S5YLussa/r3ixNT66KOQfNORlXHSOy/X4A=="
+  "resolved" "https://registry.npmjs.org/magic-string/-/magic-string-0.26.2.tgz"
+  "version" "0.26.2"
   dependencies:
     "sourcemap-codec" "^1.4.8"
 
@@ -6667,6 +6648,15 @@
   dependencies:
     "del" "^5.1.0"
 
+"rollup-plugin-dts@^4.2.2":
+  "integrity" "sha512-A3g6Rogyko/PXeKoUlkjxkP++8UDVpgA7C+Tdl77Xj4fgEaIjPSnxRmR53EzvoYy97VMVwLAOcWJudaVAuxneQ=="
+  "resolved" "https://registry.npmjs.org/rollup-plugin-dts/-/rollup-plugin-dts-4.2.2.tgz"
+  "version" "4.2.2"
+  dependencies:
+    "magic-string" "^0.26.1"
+  optionalDependencies:
+    "@babel/code-frame" "^7.16.7"
+
 "rollup-plugin-esbuild@^4.9.1":
   "integrity" "sha512-qn/x7Wz9p3Xnva99qcb+nopH0d2VJwVnsxJTGEg+Sh2Z3tqQl33MhOwzekVo1YTKgv+yAmosjcBRJygMfGrtLw=="
   "resolved" "https://registry.npmjs.org/rollup-plugin-esbuild/-/rollup-plugin-esbuild-4.9.1.tgz"
@@ -6685,17 +6675,6 @@
   dependencies:
     "chalk" "^2.4.2"
 
-"rollup-plugin-typescript2@^0.32.1":
-  "integrity" "sha512-RanO8bp1WbeMv0bVlgcbsFNCn+Y3rX7wF97SQLDxf0fMLsg0B/QFF005t4AsGUcDgF3aKJHoqt4JF2xVaABeKw=="
-  "resolved" "https://registry.npmmirror.com/rollup-plugin-typescript2/-/rollup-plugin-typescript2-0.32.1.tgz"
-  "version" "0.32.1"
-  dependencies:
-    "@rollup/pluginutils" "^4.1.2"
-    "find-cache-dir" "^3.3.2"
-    "fs-extra" "^10.0.0"
-    "resolve" "^1.20.0"
-    "tslib" "^2.4.0"
-
 "rollup-plugin-visualizer@^5.6.0":
   "integrity" "sha512-CKcc8GTUZjC+LsMytU8ocRr/cGZIfMR7+mdy4YnlyetlmIl/dM8BMnOEpD4JPIGt+ZVW7Db9ZtSsbgyeBH3uTA=="
   "resolved" "https://registry.npmmirror.com/rollup-plugin-visualizer/-/rollup-plugin-visualizer-5.6.0.tgz"
@@ -6713,7 +6692,7 @@
   dependencies:
     "estree-walker" "^0.6.1"
 
-"rollup@^1.20.0 || ^2.0.0", "rollup@^1.20.0||^2.0.0", "rollup@^2.0.0", "rollup@^2.14.0", "rollup@^2.42.0", "rollup@^2.68.0", "rollup@^2.75.6", "rollup@>=0.60.0 <3", "rollup@>=1.12.0", "rollup@>=1.26.3":
+"rollup@^1.20.0 || ^2.0.0", "rollup@^1.20.0||^2.0.0", "rollup@^2.0.0", "rollup@^2.14.0", "rollup@^2.42.0", "rollup@^2.55", "rollup@^2.68.0", "rollup@^2.75.6", "rollup@>=0.60.0 <3", "rollup@>=1.12.0":
   "integrity" "sha512-OEf0TgpC9vU6WGROJIk1JA3LR5vk/yvqlzxqdrE2CzzXnqKXNzbAwlWUXis8RS3ZPe7LAq+YUxsRa0l3r27MLA=="
   "resolved" "https://registry.npmjs.org/rollup/-/rollup-2.75.6.tgz"
   "version" "2.75.6"
@@ -7431,11 +7410,6 @@
   "resolved" "https://registry.npmmirror.com/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
 
-"tslib@^2.4.0":
-  "integrity" "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ=="
-  "resolved" "https://registry.npmmirror.com/tslib/-/tslib-2.4.0.tgz"
-  "version" "2.4.0"
-
 "tsutils@^3.21.0":
   "integrity" "sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA=="
   "resolved" "https://registry.npmmirror.com/tsutils/-/tsutils-3.21.0.tgz"
@@ -7480,7 +7454,7 @@
   "resolved" "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   "version" "0.0.6"
 
-"typescript@^4.7.3", "typescript@>=2.4.0", "typescript@>=2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3.7.0", "typescript@>=4.3":
+"typescript@^4.1", "typescript@^4.7.3", "typescript@>=2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3.7.0", "typescript@>=4.3":
   "integrity" "sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA=="
   "resolved" "https://registry.npmmirror.com/typescript/-/typescript-4.7.3.tgz"
   "version" "4.7.3"
@@ -7571,11 +7545,6 @@
   "integrity" "sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg=="
   "resolved" "https://registry.npmmirror.com/universalify/-/universalify-0.1.2.tgz"
   "version" "0.1.2"
-
-"universalify@^2.0.0":
-  "integrity" "sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ=="
-  "resolved" "https://registry.npmmirror.com/universalify/-/universalify-2.0.0.tgz"
-  "version" "2.0.0"
 
 "unset-value@^1.0.0":
   "integrity" "sha512-PcA2tsuGSF9cnySLHTLSh2qrQiJ70mn+r+Glzxv2TWZblxsxCC52BDlZoPCsz7STd9pN7EZetkWZBAvk4cgZdQ=="
