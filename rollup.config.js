@@ -1,7 +1,7 @@
 import commonjs from '@rollup/plugin-commonjs' // commonjs模块转换插件
 import eslint from '@rollup/plugin-eslint' // eslint插件
 import { babel } from '@rollup/plugin-babel'
-import ts from 'rollup-plugin-typescript2'
+import esbuild from 'rollup-plugin-esbuild'
 import path from 'path'
 import fs from 'fs'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
@@ -10,17 +10,37 @@ import packageJSON from './package.json'
 
 const extensions = ['.js', '.ts', '.tsx']
 
-// ts
-const tsPlugin = ts({
-  tsconfig: getPath('./tsconfig.json'), // 导入本地ts配置
-  extensions,
-})
+const esbuildPlugin = esbuild()
 
 // eslint
 const esPlugin = eslint({
   throwOnError: true,
   include: ['src/**/*.ts'],
   exclude: ['node_modules/**'],
+})
+
+const babelPlugin = babel({
+  exclude: [/\/core-js\//],
+  extensions: extensions,
+  presets: [
+    [
+      '@babel/env',
+      {
+        modules: false,
+        useBuiltIns: 'usage',
+        corejs: 2,
+        forceAllTransforms: true,
+      },
+    ],
+    // 添加
+    [
+      '@babel/preset-typescript',
+      {
+        extensions: ['.ts', '.js'],
+      },
+    ],
+  ],
+  plugins: ['babel-plugin-transform-object-assign', '@babel/plugin-proposal-object-rest-spread'],
 })
 
 // 基础配置
@@ -30,33 +50,9 @@ const commonConf = {
     nodeResolve(extensions),
     commonjs(),
     esPlugin,
-    tsPlugin,
-    babel({
-      exclude: [/\/core-js\//],
-      extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.vue', '.ts'],
-      presets: [
-        ["@babel/env", {
-          modules: false,
-          useBuiltIns: 'usage',
-          corejs: 2,
-          forceAllTransforms: true
-        }],
-        // 添加
-        [
-          "@babel/preset-typescript",
-          {
-            extensions: [".ts", ".js"]
-          }
-        ]
-      ],
-      plugins: [
-        "babel-plugin-transform-object-assign",
-        "@babel/plugin-proposal-object-rest-spread"
-      ]
-    }),
-    
-    
-    
+    // tsPlugin,
+    esbuildPlugin,
+    babelPlugin,
   ],
 }
 // 需要导出的模块类型
@@ -74,14 +70,14 @@ const outputMap = [
 const buildConf = (options) => Object.assign({}, commonConf, options)
 const output = outputMap.map((output) => buildConf({ output: { name: packageJSON.name, ...output } }))
 
-// es module 
+// es module
 const esOutputMap = fs.readdirSync(path.resolve(__dirname, 'src', 'utils')).map((item) => {
   const name = item.replace('.ts', '.js')
   return {
     name,
     format: 'es',
     file: 'es/' + name,
-    input: getPath('./src/utils/' + item)
+    input: getPath('./src/utils/' + item),
   }
 })
 const esoutput = esOutputMap.map((output) => buildConf({ output: { ...output }, input: output.input }))
