@@ -26,7 +26,7 @@ const babelPlugin = babel({
   babelHelpers: 'inline',
   presets: [
     [
-      '@babel/env',
+      '@babel/preset-env',
       {
         modules: false,
         useBuiltIns: 'usage',
