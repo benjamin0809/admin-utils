@@ -40,6 +40,6 @@ describe('test arrayToTree', () => {
         name: '2',
       },
     ]
-    expect(tree).toEqual('456')
+    expect(tree).toEqual(arr1)
   })
 })

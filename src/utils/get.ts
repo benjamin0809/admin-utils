@@ -14,11 +14,11 @@ function get(object: Record<string, any>, path: string | string[], defaultVal?: 
   } else {
     newPath = (path as string).replace(/\[/g, '.').replace(/\]/g, '').split('.')
   }
-  return (
-    newPath.reduce((o: Record<string, any>, k: string) => {
-      return (o || {})[k]
-    }, object) || defaultVal
-  )
+
+  const res = newPath.reduce((o: Record<string, any>, k: string) => {
+    return (o || {})[k]
+  }, object)
+  return res ?? defaultVal
 }
 
 export default get

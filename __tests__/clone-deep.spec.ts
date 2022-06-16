@@ -40,4 +40,24 @@ describe('test cloneDeep', () => {
     expect(origin.innerObject.name).toBe('bar')
     expect(origin.innerObject.array.length).toBe(1)
   })
+
+  test('test clone inner dep', () => {
+    const origin: any = {
+      name: 'foo',
+      innerObject: {
+        name: 'bar',
+        array: [12],
+        dep: null,
+      },
+    }
+    origin.innerObject.dep = origin
+    const target = deepClone(origin)
+    target.name = 'benjamin'
+    target.innerObject.name = 'benjamin'
+    target.innerObject.array.push(23)
+
+    expect(origin.name).toBe('foo')
+    expect(origin.innerObject.name).toBe('bar')
+    expect(origin.innerObject.array.length).toBe(1)
+  })
 })
